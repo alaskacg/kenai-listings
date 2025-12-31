@@ -34,8 +34,44 @@ const HeroSection = () => {
 
           {/* Animated Tagline - Below title */}
           <div className="mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
-            <p className="font-sans text-sm sm:text-base md:text-lg tracking-[0.2em] uppercase animate-shimmer font-medium">
-              Kenai Peninsula's Premier Private Listings Marketplace
+            <p className="font-sans text-sm sm:text-base md:text-lg tracking-[0.15em] uppercase font-medium text-foreground/80 animate-text-glow">
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '0ms' }}>K</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '30ms' }}>e</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '60ms' }}>n</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '90ms' }}>a</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '120ms' }}>i</span>
+              <span className="inline-block mx-1"> </span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '180ms' }}>P</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '210ms' }}>e</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '240ms' }}>n</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '270ms' }}>i</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '300ms' }}>n</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '330ms' }}>s</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '360ms' }}>u</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '390ms' }}>l</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '420ms' }}>a</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '450ms' }}>'</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '480ms' }}>s</span>
+              <span className="inline-block mx-1"> </span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '540ms' }}>P</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '570ms' }}>r</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '600ms' }}>e</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '630ms' }}>m</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '660ms' }}>i</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '690ms' }}>e</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '720ms' }}>r</span>
+              <span className="inline-block mx-1"> </span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '780ms' }}>M</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '810ms' }}>a</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '840ms' }}>r</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '870ms' }}>k</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '900ms' }}>e</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '930ms' }}>t</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '960ms' }}>p</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '990ms' }}>l</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '1020ms' }}>a</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '1050ms' }}>c</span>
+              <span className="inline-block animate-letter-float" style={{ animationDelay: '1080ms' }}>e</span>
             </p>
           </div>
 
