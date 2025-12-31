@@ -70,6 +70,7 @@ export default {
           gold: "hsl(var(--kenai-gold))",
           deep: "hsl(var(--kenai-deep))",
         },
+        "kenai-seafoam": "hsl(var(--seafoam))",
         midnight: "hsl(var(--midnight))",
         seafoam: "hsl(var(--seafoam))",
         snow: "hsl(var(--snow))",

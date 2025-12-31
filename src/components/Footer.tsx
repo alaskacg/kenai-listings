@@ -128,10 +128,10 @@ const Footer = () => {
         <div className="mt-10 pt-6 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="text-muted-foreground text-xs text-center md:text-left">
-              © {new Date().getFullYear()} Kenai Listings LLC. All rights reserved.
+              © 2025 Alaska Listings LLC. All rights reserved.
             </p>
             <p className="text-muted-foreground text-xs text-center md:text-right max-w-md">
-              Kenai Listings LLC is a listing service only. We do not participate in, endorse, or guarantee any transactions between users.
+              Kenai Listings is a listing service only. We do not participate in, endorse, or guarantee any transactions between users.
             </p>
           </div>
         </div>

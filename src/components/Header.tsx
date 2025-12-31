@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, MapPin, User, LogOut, ChevronDown, Mountain } from "lucide-react";
+import { Menu, X, MapPin, User, LogOut, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useAuth } from "@/contexts/AuthContext";
+import AnimatedLogo from "@/components/AnimatedLogo";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,9 +55,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Mountain className="w-4 h-4 text-primary-foreground" />
-              </div>
+              <AnimatedLogo />
               <span className="font-display text-base font-bold text-foreground">Kenai Listings</span>
             </Link>
 
