@@ -1,14 +1,14 @@
 import { ExternalLink, Globe } from "lucide-react";
 
 const ecosystemSites = [
-  { name: "Kenai Listings", url: "https://kenailistings.com", description: "Kenai Peninsula" },
-  { name: "Tongass Listings", url: "https://tongasslistings.com", description: "Southeast Alaska" },
-  { name: "Chugach Listings", url: "https://chugachlistings.com", description: "Prince William Sound" },
-  { name: "Alaska Mining Equipment", url: "https://alaskaminingequipment.com", description: "Mining & Prospecting" },
+  { name: "Kenai Auto Sales", url: "https://kenaiautosales.com", description: "Vehicles & Autos" },
+  { name: "Kenai Home Sales", url: "https://kenaihomesales.com", description: "Residential Properties" },
+  { name: "Kenai Land Sales", url: "https://kenailandsales.com", description: "Land & Lots" },
+  { name: "Kenai Peninsula Rentals", url: "https://kenaipeninsularentals.com", description: "Rentals & Leases" },
   { name: "Alaskan Boats", url: "https://alaskanboats.com", description: "Boats & Watercraft" },
-  { name: "Alcan Listings", url: "https://alcanlistings.com", description: "Alaska Highway" },
-  { name: "Alaska Digs", url: "https://alaskadigs.com", description: "Excavation Equipment" },
+  { name: "Alaska Mining Equipment", url: "https://alaskaminingequipment.com", description: "Mining & Prospecting" },
   { name: "Alaska Guide Listings", url: "https://alaskaguidelistings.com", description: "Guide Services" },
+  { name: "Alaska Digs", url: "https://alaskadigs.com", description: "Excavation Equipment" },
 ];
 
 const EcosystemSites = () => {
@@ -22,10 +22,10 @@ const EcosystemSites = () => {
             <span className="text-sm font-medium text-primary">Our Network</span>
           </div>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Alaska Listings Network
+            Kenai Category Sites
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Visit our specialized marketplace sites across Alaska
+            Visit our specialized marketplace sites serving the Kenai Peninsula
           </p>
         </div>
 

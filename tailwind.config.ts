@@ -63,15 +63,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        aurora: {
-          teal: "hsl(var(--aurora-teal))",
-          cyan: "hsl(var(--aurora-cyan))",
-          green: "hsl(var(--aurora-green))",
-          gold: "hsl(var(--aurora-gold))",
-          deep: "hsl(var(--aurora-deep))",
+        kenai: {
+          teal: "hsl(var(--kenai-teal))",
+          ocean: "hsl(var(--kenai-ocean))",
+          forest: "hsl(var(--kenai-forest))",
+          gold: "hsl(var(--kenai-gold))",
+          deep: "hsl(var(--kenai-deep))",
         },
         midnight: "hsl(var(--midnight))",
-        glacier: "hsl(var(--glacier))",
+        seafoam: "hsl(var(--seafoam))",
         snow: "hsl(var(--snow))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

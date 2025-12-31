@@ -28,7 +28,7 @@ const Disclaimer = () => {
               <div>
                 <h2 className="font-display text-xl font-bold text-foreground mb-2">Important Legal Notice</h2>
                 <p className="text-foreground leading-relaxed">
-                  Alaska Listings LLC is a <strong>listing service only</strong>. We do not participate in, endorse, verify, or guarantee any transactions, products, services, or claims made in listings. All transactions are conducted entirely between buyers and sellers at their own risk.
+                  Kenai Listings LLC is a <strong>listing service only</strong>. We do not participate in, endorse, verify, or guarantee any transactions, products, services, or claims made in listings. All transactions are conducted entirely between buyers and sellers at their own risk.
                 </p>
               </div>
             </div>
@@ -39,8 +39,8 @@ const Disclaimer = () => {
             
             <section>
               <h2 className="font-display text-xl font-semibold text-foreground mb-4">No Warranty or Guarantee</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Alaska Listings LLC makes NO WARRANTIES OR GUARANTEES regarding any listings, items, services, or parties using our platform. This includes but is not limited to:
+                <p className="text-muted-foreground leading-relaxed">
+                  Kenai Listings LLC makes NO WARRANTIES OR GUARANTEES regarding any listings, items, services, or parties using our platform. This includes but is not limited to:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
                 <li>The accuracy, completeness, or truthfulness of any listing</li>
@@ -53,8 +53,8 @@ const Disclaimer = () => {
 
             <section>
               <h2 className="font-display text-xl font-semibold text-foreground mb-4">Transaction Disclaimer</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                ALL TRANSACTIONS ARE CONDUCTED ENTIRELY BETWEEN BUYERS AND SELLERS. Alaska Listings LLC:
+                <p className="text-muted-foreground leading-relaxed">
+                  ALL TRANSACTIONS ARE CONDUCTED ENTIRELY BETWEEN BUYERS AND SELLERS. Kenai Listings LLC:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
                 <li>Does not inspect, verify, or authenticate any items or listings</li>
@@ -97,8 +97,8 @@ const Disclaimer = () => {
 
             <section>
               <h2 className="font-display text-xl font-semibold text-foreground mb-4">Limitation of Liability</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                UNDER NO CIRCUMSTANCES SHALL ALASKA LISTINGS LLC, ITS OWNERS, OFFICERS, EMPLOYEES, AGENTS, OR AFFILIATES BE LIABLE FOR ANY DAMAGES WHATSOEVER ARISING FROM OR RELATED TO:
+                <p className="text-muted-foreground leading-relaxed">
+                  UNDER NO CIRCUMSTANCES SHALL KENAI LISTINGS LLC, ITS OWNERS, OFFICERS, EMPLOYEES, AGENTS, OR AFFILIATES BE LIABLE FOR ANY DAMAGES WHATSOEVER ARISING FROM OR RELATED TO:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
                 <li>Any listing or its content</li>
@@ -133,8 +133,8 @@ const Disclaimer = () => {
 
             <section className="bg-secondary/30 rounded-xl p-6">
               <h2 className="font-display text-xl font-semibold text-foreground mb-4">Acknowledgment</h2>
-              <p className="text-foreground leading-relaxed">
-                BY USING ALASKA LISTINGS LLC SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO THIS DISCLAIMER. YOU ACCEPT FULL RESPONSIBILITY FOR ANY TRANSACTIONS YOU ENGAGE IN AND RELEASE ALASKA LISTINGS LLC FROM ALL LIABILITY.
+                <p className="text-foreground leading-relaxed">
+                  BY USING KENAI LISTINGS LLC SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO THIS DISCLAIMER. YOU ACCEPT FULL RESPONSIBILITY FOR ANY TRANSACTIONS YOU ENGAGE IN AND RELEASE KENAI LISTINGS LLC FROM ALL LIABILITY.
               </p>
             </section>
 

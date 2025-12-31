@@ -134,10 +134,10 @@ const Browse = () => {
           {/* Page Header */}
           <div className="text-center mb-8">
             <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-              Browse Alaska Listings
+              Browse Kenai Listings
             </h1>
             <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-              Discover what Alaskans are selling across all regions and categories
+              Discover what locals are selling across the Kenai Peninsula
             </p>
           </div>
 
