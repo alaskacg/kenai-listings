@@ -28,14 +28,14 @@ const Terms = () => {
               <section>
                 <h2 className="font-display text-xl font-semibold text-foreground mb-4">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  By accessing or using Alaska Listings LLC's services ("Services"), including but not limited to aklistings.com and all affiliated domain properties, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Services.
+                  By accessing or using Kenai Listings LLC's services ("Services"), including but not limited to kenailistings.com and all affiliated domain properties, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Services.
                 </p>
               </section>
 
               <section>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-4">2. Description of Service</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">2. Description of Service</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Alaska Listings LLC operates an online classified listing platform that allows users to post advertisements for goods and services. Our Services include:
+                  Kenai Listings LLC operates an online classified listing platform that allows users to post advertisements for goods and services. Our Services include:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
                   <li>Hosting of user-submitted listings for a fee of $10 per listing</li>
@@ -50,12 +50,12 @@ const Terms = () => {
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                     <p className="text-foreground text-sm font-medium">
-                      IMPORTANT: Alaska Listings LLC is a LISTING SERVICE ONLY. We do not participate in, facilitate, endorse, or guarantee any transactions between users.
+                      IMPORTANT: Kenai Listings LLC is a LISTING SERVICE ONLY. We do not participate in, facilitate, endorse, or guarantee any transactions between users.
                     </p>
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  We provide a platform for users to post and view listings. All transactions, negotiations, inspections, and exchanges of goods, services, or money occur solely between the parties involved. Alaska Listings LLC is not a party to any transaction and assumes no responsibility for the completion, quality, safety, or legality of any transaction.
+                  We provide a platform for users to post and view listings. All transactions, negotiations, inspections, and exchanges of goods, services, or money occur solely between the parties involved. Kenai Listings LLC is not a party to any transaction and assumes no responsibility for the completion, quality, safety, or legality of any transaction.
                 </p>
               </section>
 
@@ -84,23 +84,23 @@ const Terms = () => {
               </section>
 
               <section>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-4">6. Content Moderation</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">6. Content Moderation</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Alaska Listings LLC reserves the right to remove, edit, or refuse any listing at our sole discretion, without refund, for any reason including but not limited to: violation of these terms, inappropriate content, suspected fraud, or legal concerns.
+                  Kenai Listings LLC reserves the right to remove, edit, or refuse any listing at our sole discretion, without refund, for any reason including but not limited to: violation of these terms, inappropriate content, suspected fraud, or legal concerns.
                 </p>
               </section>
 
               <section>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-4">7. Limitation of Liability</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">7. Limitation of Liability</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALASKA LISTINGS LLC, ITS OWNERS, EMPLOYEES, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO YOUR USE OF THE SERVICES OR ANY TRANSACTION CONDUCTED THROUGH OR AS A RESULT OF THE SERVICES.
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, KENAI LISTINGS LLC, ITS OWNERS, EMPLOYEES, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO YOUR USE OF THE SERVICES OR ANY TRANSACTION CONDUCTED THROUGH OR AS A RESULT OF THE SERVICES.
                 </p>
               </section>
 
               <section>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-4">8. Indemnification</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">8. Indemnification</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  You agree to indemnify, defend, and hold harmless Alaska Listings LLC and its affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of the Services, your listings, or any transaction you participate in.
+                  You agree to indemnify, defend, and hold harmless Kenai Listings LLC and its affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of the Services, your listings, or any transaction you participate in.
                 </p>
               </section>
 
@@ -112,9 +112,9 @@ const Terms = () => {
               </section>
 
               <section>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-4">10. Contact Information</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">10. Contact Information</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  For questions about these Terms of Service, please contact us at: support@aklistings.com
+                  For questions about these Terms of Service, please contact us at: support@kenailistings.com
                 </p>
               </section>
 
