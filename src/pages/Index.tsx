@@ -5,16 +5,24 @@ import RecentListings from "@/components/RecentListings";
 import EcosystemSites from "@/components/EcosystemSites";
 import CTASection from "@/components/CTASection";
 import TrustIndicators from "@/components/TrustIndicators";
+import BetaBanner from "@/components/BetaBanner";
+import BetaPromoSection from "@/components/BetaPromoSection";
+import FeaturedCategories from "@/components/FeaturedCategories";
+import RegionSpotlight from "@/components/RegionSpotlight";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <BetaBanner />
       <Header />
       <main>
         <HeroSection />
         <TrustIndicators />
-        <EcosystemSites />
+        <FeaturedCategories />
+        <BetaPromoSection />
+        <RegionSpotlight />
         <RecentListings />
+        <EcosystemSites />
         <CTASection />
       </main>
       <Footer />
