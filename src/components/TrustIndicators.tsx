@@ -5,7 +5,7 @@ const TrustIndicators = () => {
     {
       icon: Shield,
       title: "Verified Sellers",
-      description: "Track record displayed on every listing",
+      description: "Email-verified accounts only",
     },
     {
       icon: Users,
@@ -15,12 +15,12 @@ const TrustIndicators = () => {
     {
       icon: MapPin,
       title: "Local Focus",
-      description: "Regional expertise across all of Alaska",
+      description: "Kenai Peninsula expertise",
     },
     {
       icon: CheckCircle,
-      title: "Paid Listings Only",
-      description: "Committed sellers, no spam or scams",
+      title: "Free During Beta",
+      description: "Post now, stay live after beta!",
     },
   ];
 
