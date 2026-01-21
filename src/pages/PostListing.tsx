@@ -183,7 +183,7 @@ const PostListing = () => {
       const expiresAt = new Date();
       expiresAt.setDate(expiresAt.getDate() + 60);
 
-      // Create listing first
+      // Create listing - BETA: Free listings are automatically active
       const { data: listing, error: listingError } = await supabase
         .from('listings')
         .insert({
@@ -196,8 +196,8 @@ const PostListing = () => {
           contact_name: contactName.trim(),
           contact_email: contactEmail.trim(),
           contact_phone: contactPhone.trim() || null,
-          status: 'pending',
-          payment_status: 'unpaid',
+          status: 'active', // BETA: Auto-activate
+          payment_status: 'paid', // BETA: Free during beta
           expires_at: expiresAt.toISOString(),
         })
         .select()
@@ -218,8 +218,8 @@ const PostListing = () => {
       }
 
       toast({
-        title: "Listing Created",
-        description: "Your listing has been submitted. Payment integration coming soon - your listing will be reviewed by admin.",
+        title: "🎉 Listing Published!",
+        description: "Your FREE beta listing is now live for 60 days!",
       });
 
       navigate('/my-listings');
@@ -254,22 +254,22 @@ const PostListing = () => {
               Post Your Listing
             </h1>
             <p className="text-muted-foreground text-sm">
-              Fill out the form below to create your listing. All listings are $10 and active for 60 days.
+              Fill out the form below to create your listing. During beta, all listings are FREE for 60 days!
             </p>
           </div>
 
-          {/* Pricing Banner */}
-          <div className="bg-glass rounded-2xl p-6 mb-10 flex items-center justify-between">
+          {/* Beta Free Listing Banner */}
+          <div className="bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-2xl p-6 mb-10 flex items-center justify-between border border-accent/30">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                <DollarSign className="w-6 h-6 text-accent" />
+              <div className="w-12 h-12 rounded-xl bg-accent/30 flex items-center justify-center">
+                <span className="text-2xl">🎉</span>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground text-sm">$10 per listing</h3>
-                <p className="text-xs text-muted-foreground">60 days • Up to 5 images</p>
+                <h3 className="font-semibold text-foreground text-sm">FREE During Beta!</h3>
+                <p className="text-xs text-muted-foreground">60 days • Up to 5 images • Instant activation</p>
               </div>
             </div>
-            <div className="text-2xl font-display font-bold text-accent">$10</div>
+            <div className="text-2xl font-display font-bold text-accent line-through opacity-50">$10</div>
           </div>
 
           {/* Form */}
