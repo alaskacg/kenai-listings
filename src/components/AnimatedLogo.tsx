@@ -1,75 +1,136 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const AnimatedLogo = () => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
     <div 
-      className="relative w-10 h-10 cursor-pointer"
+      className="relative w-12 h-12 cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Outer glow ring */}
-      <div className={`absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-kenai-teal to-kenai-forest opacity-80 blur-sm transition-all duration-500 ${isHovered ? 'scale-125 opacity-100' : 'scale-100'}`} />
+      {/* Outer glow effect */}
+      <div className={`absolute inset-0 rounded-xl blur-md transition-all duration-700 ${isHovered ? 'opacity-80 scale-125' : 'opacity-40 scale-100'}`}
+        style={{
+          background: 'linear-gradient(135deg, hsl(168 65% 38%) 0%, hsl(195 60% 35%) 50%, hsl(150 55% 28%) 100%)'
+        }}
+      />
       
       {/* Main logo container */}
-      <div className="relative w-full h-full rounded-xl bg-gradient-to-br from-primary via-kenai-ocean to-kenai-deep overflow-hidden">
-        {/* Animated wave layers */}
+      <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg"
+        style={{
+          background: 'linear-gradient(180deg, hsl(200 50% 22%) 0%, hsl(200 45% 12%) 100%)'
+        }}
+      >
+        {/* Sky gradient with aurora effect */}
         <div className="absolute inset-0">
-          {/* Wave 1 */}
-          <svg 
-            className="absolute bottom-0 left-0 w-full animate-wave-slow" 
-            viewBox="0 0 40 12" 
-            preserveAspectRatio="none"
-          >
-            <path 
-              d="M0 12 L0 8 Q5 4 10 8 T20 8 T30 8 T40 8 L40 12 Z" 
-              className="fill-kenai-seafoam/40"
+          {/* Aurora bands */}
+          <div className={`absolute top-0 left-0 right-0 h-1/2 transition-opacity duration-700 ${isHovered ? 'opacity-100' : 'opacity-60'}`}>
+            <div className="absolute inset-0 animate-aurora-1"
+              style={{
+                background: 'linear-gradient(180deg, transparent 0%, hsl(168 65% 38% / 0.3) 30%, hsl(170 40% 75% / 0.2) 50%, transparent 70%)',
+              }}
             />
-          </svg>
+            <div className="absolute inset-0 animate-aurora-2"
+              style={{
+                background: 'linear-gradient(180deg, transparent 10%, hsl(195 60% 35% / 0.25) 40%, hsl(150 55% 28% / 0.2) 60%, transparent 80%)',
+              }}
+            />
+          </div>
           
-          {/* Wave 2 */}
-          <svg 
-            className="absolute bottom-0 left-0 w-full animate-wave-medium" 
-            viewBox="0 0 40 12" 
-            preserveAspectRatio="none"
-          >
-            <path 
-              d="M0 12 L0 9 Q5 5 10 9 T20 9 T30 9 T40 9 L40 12 Z" 
-              className="fill-primary/30"
-            />
-          </svg>
+          {/* Stars */}
+          <div className={`transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-70'}`}>
+            <div className="absolute top-1.5 left-2 w-0.5 h-0.5 bg-white rounded-full animate-twinkle" />
+            <div className="absolute top-2.5 right-2.5 w-0.5 h-0.5 bg-white rounded-full animate-twinkle delay-300" />
+            <div className="absolute top-1 right-4 w-[3px] h-[3px] bg-white rounded-full animate-twinkle delay-500" />
+            <div className="absolute top-3 left-4 w-[2px] h-[2px] bg-white rounded-full animate-twinkle delay-700" />
+          </div>
         </div>
         
-        {/* Mountain peaks */}
+        {/* Mountains - High definition SVG */}
         <svg 
-          className={`absolute inset-0 w-full h-full transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}
-          viewBox="0 0 40 40" 
-          preserveAspectRatio="xMidYMid meet"
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 48 48" 
+          preserveAspectRatio="xMidYMax slice"
         >
-          {/* Back mountain */}
+          {/* Back mountain range - distant */}
           <path 
-            d="M5 32 L15 12 L25 32 Z" 
-            className="fill-kenai-forest/60"
+            d="M-2 48 L-2 32 L8 24 L14 28 L20 22 L28 30 L34 26 L42 32 L50 28 L50 48 Z" 
+            fill="hsl(200 40% 18%)"
+            className={`transition-transform duration-700 ${isHovered ? 'translate-y-0' : 'translate-y-0.5'}`}
+            style={{ filter: 'blur(0.5px)' }}
           />
-          {/* Front mountain with snow cap */}
+          
+          {/* Mid mountain - with snow */}
           <path 
-            d="M12 32 L24 8 L36 32 Z" 
-            className="fill-primary-foreground/90"
+            d="M-4 48 L-4 38 L6 26 L12 30 L16 28 L22 34 L26 32 L30 38 L32 36 L36 40 L52 40 L52 48 Z" 
+            fill="hsl(195 35% 22%)"
+            className={`transition-all duration-500 ${isHovered ? 'translate-y-0' : 'translate-y-0.5'}`}
           />
-          {/* Snow cap */}
+          
+          {/* Main mountain - left peak */}
           <path 
-            d="M20 8 L24 8 L27 14 L24 12 L20 14 L17 12 L14 14 Z" 
-            className="fill-white"
+            d="M-2 48 L10 28 L16 32 L22 24 L28 28 L32 48 Z" 
+            fill="hsl(150 30% 25%)"
+            className={`transition-transform duration-500 ${isHovered ? 'scale-[1.02] origin-bottom' : 'scale-100'}`}
+          />
+          
+          {/* Main mountain - right dominant peak */}
+          <path 
+            d="M18 48 L32 20 L38 26 L44 22 L52 30 L52 48 Z" 
+            fill="hsl(168 35% 28%)"
+            className={`transition-transform duration-500 ${isHovered ? 'scale-[1.02] origin-bottom' : 'scale-100'}`}
+          />
+          
+          {/* Snow cap - main peak */}
+          <path 
+            d="M32 20 L34 24 L32 23 L29 26 L31 24 L28 25 L32 20 Z" 
+            fill="hsl(180 30% 96%)"
+            className="animate-snow-shimmer"
+          />
+          
+          {/* Snow streak - right peak */}
+          <path 
+            d="M44 22 L46 26 L44 25 L42 28 L44 22 Z" 
+            fill="hsl(180 20% 90%)"
+            className="animate-snow-shimmer delay-200"
+          />
+          
+          {/* Snow cap - left peak */}
+          <path 
+            d="M22 24 L24 27 L22 26 L20 28 L22 24 Z" 
+            fill="hsl(180 25% 92%)"
+            className="animate-snow-shimmer delay-400"
+          />
+          
+          {/* Foreground ridge */}
+          <path 
+            d="M-2 48 L4 42 L10 44 L18 40 L24 42 L32 38 L38 42 L44 40 L50 44 L50 48 Z" 
+            fill="hsl(200 45% 8%)"
           />
         </svg>
         
-        {/* Animated aurora/glow effect on hover */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-transparent via-kenai-seafoam/20 to-primary/10 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+        {/* Water/Lake reflection */}
+        <div className="absolute bottom-0 left-0 right-0 h-3 overflow-hidden">
+          <div className="absolute inset-0 animate-water-ripple"
+            style={{
+              background: 'linear-gradient(180deg, hsl(195 60% 25% / 0.6) 0%, hsl(200 50% 20% / 0.8) 50%, hsl(200 45% 15%) 100%)'
+            }}
+          />
+          <div className="absolute inset-0 animate-water-ripple-slow"
+            style={{
+              background: 'linear-gradient(90deg, transparent 0%, hsl(168 65% 38% / 0.2) 25%, transparent 50%, hsl(168 65% 38% / 0.15) 75%, transparent 100%)'
+            }}
+          />
+        </div>
         
-        {/* Sparkle effects */}
-        <div className={`absolute top-2 right-2 w-1 h-1 rounded-full bg-white animate-pulse-glow ${isHovered ? 'opacity-100' : 'opacity-60'}`} />
-        <div className={`absolute top-3 right-3.5 w-0.5 h-0.5 rounded-full bg-white animate-pulse-glow ${isHovered ? 'opacity-100' : 'opacity-40'}`} style={{ animationDelay: '0.5s' }} />
+        {/* Golden accent glow on hover */}
+        <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-4 transition-opacity duration-500 ${isHovered ? 'opacity-60' : 'opacity-0'}`}
+          style={{
+            background: 'radial-gradient(ellipse, hsl(43 70% 42% / 0.4) 0%, transparent 70%)',
+            filter: 'blur(2px)'
+          }}
+        />
       </div>
     </div>
   );
