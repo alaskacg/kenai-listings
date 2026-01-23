@@ -81,8 +81,8 @@ const ListingDetail = () => {
 
         if (error) throw error;
         setListing(data);
-      } catch (error) {
-        console.error('Error fetching listing:', error);
+      } catch {
+        // Error handled silently - user sees "not found" state
       } finally {
         setLoading(false);
       }

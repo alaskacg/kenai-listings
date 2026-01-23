@@ -41,8 +41,8 @@ const AdminPayments = () => {
 
       if (error) throw error;
       setPayments(data || []);
-    } catch (error) {
-      console.error('Error fetching payments:', error);
+    } catch {
+      // Error handled silently - admin sees empty results
     } finally {
       setLoading(false);
     }

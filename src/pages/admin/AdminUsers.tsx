@@ -43,8 +43,7 @@ const AdminUsers = () => {
       if (profilesRes.error) throw profilesRes.error;
       setUsers(profilesRes.data || []);
       setRoles(rolesRes.data || []);
-    } catch (error) {
-      console.error('Error fetching users:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to fetch users",
@@ -79,8 +78,7 @@ const AdminUsers = () => {
         toast({ title: "Success", description: "Admin role granted" });
       }
       fetchData();
-    } catch (error) {
-      console.error('Error toggling admin role:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to update user role",
