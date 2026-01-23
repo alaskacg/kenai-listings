@@ -57,8 +57,8 @@ const Dashboard = () => {
           totalRevenue,
           recentPayments,
         });
-      } catch (error) {
-        console.error('Error fetching stats:', error);
+      } catch {
+        // Error handled silently - admin sees default stats
       } finally {
         setLoading(false);
       }

@@ -49,8 +49,7 @@ const AdminListings = () => {
 
       if (error) throw error;
       setListings(data || []);
-    } catch (error) {
-      console.error('Error fetching listings:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to fetch listings",
@@ -87,8 +86,7 @@ const AdminListings = () => {
         description: `Listing ${status === 'active' ? 'approved' : 'rejected'}`,
       });
       fetchListings();
-    } catch (error) {
-      console.error('Error updating listing:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to update listing",
@@ -113,8 +111,7 @@ const AdminListings = () => {
         description: "Listing deleted",
       });
       fetchListings();
-    } catch (error) {
-      console.error('Error deleting listing:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to delete listing",

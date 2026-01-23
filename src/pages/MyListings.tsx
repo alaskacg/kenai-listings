@@ -78,8 +78,7 @@ const MyListings = () => {
 
       if (error) throw error;
       setListings(data || []);
-    } catch (error) {
-      console.error('Error fetching listings:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to load your listings",
@@ -107,8 +106,7 @@ const MyListings = () => {
         title: "Listing Deleted",
         description: "Your listing has been removed",
       });
-    } catch (error) {
-      console.error('Error deleting listing:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to delete listing",

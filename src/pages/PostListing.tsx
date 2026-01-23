@@ -17,7 +17,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
-import { Upload, X, DollarSign, AlertCircle, Loader2 } from "lucide-react";
+import { Upload, X, AlertCircle, Loader2 } from "lucide-react";
+import { validateListing } from "@/lib/validation";
 
 const categories = [
   { value: "vehicles", label: "Vehicles & Autos" },
@@ -131,7 +132,7 @@ const PostListing = () => {
         .upload(fileName, file);
 
       if (uploadError) {
-        console.error('Upload error:', uploadError);
+        // Skip failed uploads silently
         continue;
       }
 
@@ -167,18 +168,32 @@ const PostListing = () => {
       return;
     }
 
-    if (!category || !region || !title || !price || !description || !contactName || !contactEmail) {
+    // Validate all inputs using zod schema
+    const validation = validateListing({
+      title,
+      description,
+      price,
+      category,
+      region,
+      contactName,
+      contactEmail,
+      contactPhone,
+    });
+
+    if (validation.success === false) {
       toast({
-        title: "Missing Fields",
-        description: "Please fill in all required fields.",
+        title: "Validation Error",
+        description: validation.errors[0],
         variant: "destructive",
       });
       return;
     }
 
+    const validatedData = validation.data;
     setIsSubmitting(true);
 
     try {
+      
       // Calculate expiration (60 days from now)
       const expiresAt = new Date();
       expiresAt.setDate(expiresAt.getDate() + 60);
@@ -188,14 +203,14 @@ const PostListing = () => {
         .from('listings')
         .insert({
           user_id: user.id,
-          category,
-          region,
-          title: title.trim(),
-          price: parseFloat(price),
-          description: description.trim(),
-          contact_name: contactName.trim(),
-          contact_email: contactEmail.trim(),
-          contact_phone: contactPhone.trim() || null,
+          category: validatedData.category,
+          region: validatedData.region,
+          title: validatedData.title,
+          price: validatedData.price,
+          description: validatedData.description,
+          contact_name: validatedData.contactName,
+          contact_email: validatedData.contactEmail,
+          contact_phone: validatedData.contactPhone || null,
           status: 'active', // BETA: Auto-activate
           payment_status: 'paid', // BETA: Free during beta
           expires_at: expiresAt.toISOString(),
@@ -223,8 +238,7 @@ const PostListing = () => {
       });
 
       navigate('/my-listings');
-    } catch (error) {
-      console.error('Error creating listing:', error);
+    } catch {
       toast({
         title: "Error",
         description: "Failed to create listing. Please try again.",

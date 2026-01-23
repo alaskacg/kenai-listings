@@ -99,8 +99,8 @@ const Browse = () => {
 
       if (error) throw error;
       setListings(data || []);
-    } catch (error) {
-      console.error('Error fetching listings:', error);
+    } catch {
+      // Error handled silently - user sees empty results
     } finally {
       setLoading(false);
     }
