@@ -221,15 +221,44 @@ const PostListing = () => {
       if (listingError) throw listingError;
 
       // Upload images if any
+      let finalImageUrls: string[] = [];
       if (images.length > 0 && listing) {
-        const imageUrls = await uploadImages(listing.id);
+        finalImageUrls = await uploadImages(listing.id);
         
-        if (imageUrls.length > 0) {
+        if (finalImageUrls.length > 0) {
           await supabase
             .from('listings')
-            .update({ images: imageUrls })
+            .update({ images: finalImageUrls })
             .eq('id', listing.id);
         }
+      }
+
+      // Sync to ecosystem hub (fire and forget - don't block on failure)
+      if (listing) {
+        fetch('https://jneflbektcqalwhgfuyo.supabase.co/functions/v1/ecosystem-listings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            source_site: 'kenai-listings',
+            listing_id: listing.id,
+            title: validatedData.title,
+            description: validatedData.description,
+            price: validatedData.price,
+            category: validatedData.category,
+            region: validatedData.region,
+            contact_name: validatedData.contactName,
+            contact_email: validatedData.contactEmail,
+            contact_phone: validatedData.contactPhone || null,
+            images: finalImageUrls,
+            status: 'active',
+            created_at: listing.created_at,
+            expires_at: expiresAt.toISOString(),
+          }),
+        }).catch(() => {
+          // Silently fail - ecosystem sync is non-critical
+        });
       }
 
       toast({
