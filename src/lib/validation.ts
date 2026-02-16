@@ -80,7 +80,7 @@ export function validateListing(data: {
   });
 
   if (!result.success) {
-    const errors = result.error.errors.map((e) => e.message);
+    const errors = result.error.issues?.map((e) => e.message) || [result.error.message];
     return { success: false, errors } as ValidationError;
   }
 

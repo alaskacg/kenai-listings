@@ -1,63 +1,38 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "@/contexts/AuthContext";
-import Index from "./pages/Index";
-import PostListing from "./pages/PostListing";
-import Browse from "./pages/Browse";
-import ListingDetail from "./pages/ListingDetail";
-import MyListings from "./pages/MyListings";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
-import Disclaimer from "./pages/Disclaimer";
-import Regions from "./pages/Regions";
-import Categories from "./pages/Categories";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/admin/Dashboard";
-import AdminListings from "./pages/admin/AdminListings";
-import AdminUsers from "./pages/admin/AdminUsers";
-import AdminPayments from "./pages/admin/AdminPayments";
-import AdminSettings from "./pages/admin/AdminSettings";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import BrowsePage from './pages/BrowsePage'
+import ListingDetailPage from './pages/ListingDetailPage'
+import CreateListingPage from './pages/CreateListingPage'
+import DashboardPage from './pages/DashboardPage'
+import LoginPage from './pages/LoginPage'
+import SignUpPage from './pages/SignUpPage'
+import HowItWorksPage from './pages/HowItWorksPage'
+import SafetyPage from './pages/SafetyPage'
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <Header />
+        <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/post-listing" element={<PostListing />} />
-            <Route path="/browse" element={<Browse />} />
-            <Route path="/listing/:id" element={<ListingDetail />} />
-            <Route path="/my-listings" element={<MyListings />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/disclaimer" element={<Disclaimer />} />
-            <Route path="/regions" element={<Regions />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            {/* Admin Routes */}
-            <Route path="/admin" element={<Dashboard />} />
-            <Route path="/admin/listings" element={<AdminListings />} />
-            <Route path="/admin/users" element={<AdminUsers />} />
-            <Route path="/admin/payments" element={<AdminPayments />} />
-            <Route path="/admin/settings" element={<AdminSettings />} />
-            {/* Catch-all */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/browse" element={<BrowsePage />} />
+            <Route path="/listing/:id" element={<ListingDetailPage />} />
+            <Route path="/create-listing" element={<CreateListingPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/safety" element={<SafetyPage />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </AuthProvider>
-  </QueryClientProvider>
-);
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  )
+}
 
-export default App;
+export default App

@@ -1,143 +1,60 @@
-import { Link } from "react-router-dom";
-import { Mountain, Mail, FileText, Shield, Scale, ExternalLink } from "lucide-react";
+import { Link } from 'react-router-dom'
+import { Shield, Heart } from 'lucide-react'
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-10 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Mountain className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="font-display text-base font-bold text-foreground">Kenai Listings</span>
-            </Link>
-            <p className="text-muted-foreground text-xs leading-relaxed mb-4">
-              Kenai Peninsula's premier private listings marketplace connecting buyers and sellers across the peninsula.
+    <footer className="bg-gray-900 text-white mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">{import.meta.env.VITE_APP_NAME || 'Kenai Platform'}</h3>
+            <p className="text-gray-400">
+              Alaska's most trusted listing platform. Simple, safe, and affordable.
             </p>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs text-muted-foreground">Listings just</span>
-              <span className="text-sm font-semibold text-accent">$10</span>
-              <span className="text-xs text-muted-foreground">for 60 days</span>
-            </div>
-            <a 
-              href="https://aklistings.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
-            >
-              Part of the Alaska Listings Network
-              <ExternalLink className="w-3 h-3" />
-            </a>
           </div>
 
-          {/* Areas */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-foreground mb-3">Areas</h4>
-            <ul className="space-y-1.5">
-              <li>
-                <Link to="/browse?region=soldotna" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Soldotna
-                </Link>
-              </li>
-              <li>
-                <Link to="/browse?region=kenai" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Kenai
-                </Link>
-              </li>
-              <li>
-                <Link to="/browse?region=homer" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Homer
-                </Link>
-              </li>
-              <li>
-                <Link to="/browse?region=seward" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Seward
-                </Link>
-              </li>
-              <li>
-                <Link to="/regions" className="text-primary hover:text-primary/80 transition-colors text-xs font-medium">
-                  View All 9 Areas →
-                </Link>
-              </li>
+            <h4 className="font-semibold mb-4">For Buyers</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li><Link to="/browse" className="hover:text-white">Browse Listings</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-white">How It Works</Link></li>
+              <li><Link to="/safety" className="hover:text-white">Safety Tips</Link></li>
             </ul>
           </div>
 
-          {/* Categories */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-foreground mb-3">Categories</h4>
-            <ul className="space-y-1.5">
-              <li>
-                <a href="https://kenaiautosales.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Vehicles
-                </a>
-              </li>
-              <li>
-                <a href="https://alaskanboats.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Boats & Watercraft
-                </a>
-              </li>
-              <li>
-                <a href="https://kenaihomesales.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Real Estate
-                </a>
-              </li>
-              <li>
-                <a href="https://alaskaminingequipment.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-xs">
-                  Mining Equipment
-                </a>
-              </li>
+            <h4 className="font-semibold mb-4">For Sellers</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li><Link to="/create-listing" className="hover:text-white">Post a Listing</Link></li>
+              <li><Link to="/pricing" className="hover:text-white">Pricing</Link></li>
+              <li><Link to="/dashboard" className="hover:text-white">Seller Dashboard</Link></li>
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-foreground mb-3">Legal</h4>
-            <ul className="space-y-1.5">
-              <li>
-                <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors text-xs flex items-center gap-2">
-                  <FileText className="w-3 h-3" />
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-xs flex items-center gap-2">
-                  <Shield className="w-3 h-3" />
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/disclaimer" className="text-muted-foreground hover:text-primary transition-colors text-xs flex items-center gap-2">
-                  <Scale className="w-3 h-3" />
-                  Disclaimer
-                </Link>
-              </li>
-              <li>
-                <a href="mailto:support@kenailistings.com" className="text-muted-foreground hover:text-primary transition-colors text-xs flex items-center gap-2">
-                  <Mail className="w-3 h-3" />
-                  Contact Us
-                </a>
-              </li>
+            <h4 className="font-semibold mb-4">Company</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+              <li><Link to="/terms" className="hover:text-white">Terms of Service</Link></li>
+              <li><Link to="/privacy" className="hover:text-white">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-10 pt-6 border-t border-border">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-muted-foreground text-xs text-center md:text-left">
-              © 2025 Alaska Listings LLC. All rights reserved.
-            </p>
-            <p className="text-muted-foreground text-xs text-center md:text-right max-w-md">
-              Kenai Listings is a listing service only. We do not participate in, endorse, or guarantee any transactions between users.
-            </p>
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center gap-2 text-gray-400">
+            <Shield size={20} />
+            <span>Secure Platform</span>
+            <span className="mx-2">•</span>
+            <Heart size={20} />
+            <span>Made in Alaska</span>
           </div>
+          <p className="text-gray-400 mt-4 md:mt-0">
+            © {new Date().getFullYear()} {import.meta.env.VITE_APP_NAME}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}
