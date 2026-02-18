@@ -9,6 +9,7 @@ import BetaBanner from "@/components/BetaBanner";
 import BetaPromoSection from "@/components/BetaPromoSection";
 import FeaturedCategories from "@/components/FeaturedCategories";
 import RegionSpotlight from "@/components/RegionSpotlight";
+import EmpireNetwork from "@/components/EmpireNetwork";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <RecentListings />
         <EcosystemSites />
         <CTASection />
+        <EmpireNetwork currentSite="kenai-listings" />
       </main>
       <Footer />
     </div>
