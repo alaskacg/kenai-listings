@@ -155,7 +155,10 @@ const PostListing = () => {
         description: "Please sign in to post a listing.",
         variant: "destructive",
       });
-      navigate('/login');
+      // Redirect to Stripe for payment
+      const email = encodeURIComponent(contactEmail);
+      window.location.href = `https://buy.stripe.com/5kQcMYbUmdczcai0iK6J200?prefilled_email=${email}`;
+return;
       return;
     }
 
@@ -211,8 +214,8 @@ const PostListing = () => {
           contact_name: validatedData.contactName,
           contact_email: validatedData.contactEmail,
           contact_phone: validatedData.contactPhone || null,
-          status: 'active', // BETA: Auto-activate
-          payment_status: 'paid', // BETA: Free during beta
+          status: 'pending_payment',
+          payment_status: 'pending', // BETA: Free during beta
           expires_at: expiresAt.toISOString(),
         })
         .select()
@@ -263,10 +266,12 @@ const PostListing = () => {
 
       toast({
         title: "🎉 Listing Published!",
-        description: "Your FREE beta listing is now live for 60 days!",
+        description: "Your listing is now live for 60 days!",
       });
-
-      navigate('/my-listings');
+      // Redirect to Stripe for payment
+      const email = encodeURIComponent(contactEmail);
+      window.location.href = `https://buy.stripe.com/5kQcMYbUmdczcai0iK6J200?prefilled_email=${email}`;
+return;
     } catch {
       toast({
         title: "Error",
@@ -301,7 +306,7 @@ const PostListing = () => {
             </p>
           </div>
 
-          {/* Beta Free Listing Banner */}
+          {/* listing Banner */}
           <div className="bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-2xl p-6 mb-10 flex items-center justify-between border border-accent/30">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-accent/30 flex items-center justify-center">
