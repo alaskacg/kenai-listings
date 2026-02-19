@@ -12,23 +12,13 @@ const CTASection = () => {
       
       <div className="relative container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Beta Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 rounded-full px-4 py-2 mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-            </span>
-            <span className="text-accent font-semibold text-sm">BETA: Free Listings!</span>
-          </div>
-
           {/* Heading */}
           <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
-            Don't Miss Out—Post Your Free Listing Today!
+            Post Your Listing Today!
           </h2>
           
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            During our beta launch, all 60-day listings are <span className="text-primary font-semibold">completely free</span> for email-verified users. 
-            Your listing will stay active for its full duration—even after we exit beta!
+            Reach thousands of Alaskans with a 60-day listing. Up to 5 images, instant activation, and full regional coverage.
           </p>
 
           {/* Features */}
@@ -38,10 +28,9 @@ const CTASection = () => {
                 <Gift className="w-6 h-6 text-accent" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                <span className="line-through text-muted-foreground mr-2">$10</span>
-                <span className="text-accent">FREE</span>
+                <span className="text-accent">$10</span>
               </h3>
-              <p className="text-muted-foreground text-sm">Beta special—no payment required</p>
+              <p className="text-muted-foreground text-sm">Affordable 60-day listing</p>
             </div>
             
             <div className="bg-glass rounded-2xl p-6 text-center">
@@ -64,13 +53,13 @@ const CTASection = () => {
           {/* CTA Button */}
           <Link to="/post-listing">
             <Button variant="gold" size="xl" className="group">
-              Claim Your Free Listing Now
+              Post Your Listing Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
           
           <p className="text-muted-foreground text-sm mt-4">
-            Limited time offer • Verify your email to get started
+            Verify your email to get started
           </p>
         </div>
       </div>

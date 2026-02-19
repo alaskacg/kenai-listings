@@ -19,8 +19,8 @@ const TrustIndicators = () => {
     },
     {
       icon: CheckCircle,
-      title: "Free During Beta",
-      description: "Post now, stay live after beta!",
+      title: "Affordable Listings",
+      description: "60-day listings starting at $10",
     },
   ];
 
