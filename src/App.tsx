@@ -12,6 +12,7 @@ import HowItWorksPage from './pages/HowItWorksPage'
 import SafetyPage from './pages/SafetyPage'
 
 import ListingSuccess from "@/pages/ListingSuccess";
+import ListingCancel from "@/pages/ListingCancel";
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
             <Route path="/how-it-works" element={<HowItWorksPage />} />
             <Route path="/safety" element={<SafetyPage />} />
             <Route path="/listing-success" element={<ListingSuccess />} />
+            <Route path="/listing-cancel" element={<ListingCancel />} />
         </Routes>
         </main>
         <Footer />
